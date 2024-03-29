@@ -39,7 +39,7 @@ export default function Home() {
           mx={"auto"}
           as="main"
           bgRepeat={"no-repeat"}
-          bgGradient={"linear(236deg,#DCDDDB 0%,, #3FAE50 0%, black 100%)"}
+          bgGradient={"linear(236deg,#DCDDDB 0%,, #329648 0%, black 100%)"}
           h={"100vh"}
           pos={"relative"}
         >
