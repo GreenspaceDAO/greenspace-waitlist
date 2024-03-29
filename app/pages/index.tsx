@@ -5,6 +5,8 @@ import PageLoader from "@/components/PageLoader";
 import { HeaderNav } from "@/components/HeaderNav";
 import WaitListForm from "@/components/WaitListForm";
 import HeroArea from "@/components/HeroArea";
+import CommunityArea from "@/components/CommunityArea";
+import CoachArea from "@/components/CoachArea";
 
 export default function Home() {
   return (
@@ -40,10 +42,11 @@ export default function Home() {
           as="main"
           bgRepeat={"no-repeat"}
           bgGradient={"linear(236deg,#DCDDDB 0%,, #329648 0%, black 100%)"}
-          h={"100vh"}
+          minH={"100vh"}
           pos={"relative"}
         >
           <Box
+            pb={8}
             h={"full"}
             bg={"rgba(41, 41, 41,0.44)"}
             backdropFilter={"blur(30px)"}
@@ -52,6 +55,8 @@ export default function Home() {
 
             <HeroArea />
             <WaitListForm />
+            <CommunityArea />
+            <CoachArea />
           </Box>
         </Box>
       </PageLoader>

@@ -2,7 +2,17 @@ import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 
 export default function HeroArea() {
   return (
-    <Flex my={10} px={{ base: 4, md: 12 }}>
+    <Flex
+      borderBottom={"1px"}
+      borderBottomColor={"gs-gray.700"}
+      wrap={{ base: "wrap-reverse", md: "nowrap" }}
+      px={{ base: 4, md: 12 }}
+      align={"center"}
+      mt={12}
+      mb={4}
+      gap={5}
+      pb={8}
+    >
       <Stack maxW={600}>
         <Heading mb={6} size={"3xl"}>
           Want to Live{" "}
@@ -15,7 +25,7 @@ export default function HeroArea() {
             Longer?
           </Text>
         </Heading>
-        <Text color={"gs-gray.100"}>
+        <Text lineHeight={"taller"} maxW={500}>
           We&apos;re building healthy communities focused on longevity all
           around the world, we want to help people live longer, better through
           community inclusive programs that improve productivity, make people
@@ -24,7 +34,20 @@ export default function HeroArea() {
         </Text>
       </Stack>
 
-      <Box></Box>
+      <Box>
+        <Box
+          as="video"
+          muted
+          loop
+          autoPlay
+          src="/assets/group-video.mp4"
+          minH={{ base: 350, sm: 450 }}
+          rounded={"20px"}
+          objectFit={"cover"}
+        >
+          <span>Video not supported</span>
+        </Box>
+      </Box>
     </Flex>
   );
 }

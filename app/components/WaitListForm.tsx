@@ -17,10 +17,10 @@ export default function WaitListForm() {
     initialValues: {
       email: "",
     },
-    onSubmit(values, formikHelpers) {},
+    onSubmit: async (values, formikHelpers) => {},
   });
   return (
-    <Box mx={"auto"} maxW={"704"} my={5} px={4}>
+    <Box id="waitlist-form" mx={"auto"} maxW={"704"} my={16} px={4}>
       <Stack textAlign={"center"}>
         <Heading fontWeight={600}>Join Waitlist</Heading>
         <Text fontSize={"18px"}>Be the first to know when we launch</Text>
@@ -47,6 +47,13 @@ export default function WaitListForm() {
               />
               <Input
                 pl={2}
+                transition={"0.35s ease-in-out"}
+                rounded={"none"}
+                _focus={{
+                  borderBottom: "2px",
+                  boxShadow: "none",
+                  borderBottomColor: "gs-yellow.400",
+                }}
                 border={"0"}
                 type="email"
                 _placeholder={{ color: "gs-gray.500" }}
@@ -54,6 +61,7 @@ export default function WaitListForm() {
               />
             </HStack>
             <Button
+              isLoading={formik.isSubmitting}
               flexShrink={0}
               rounded={"10px"}
               size={{ base: "sm", md: "md" }}
