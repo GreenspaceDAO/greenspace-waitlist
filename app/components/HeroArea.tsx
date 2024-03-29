@@ -4,7 +4,7 @@ export default function HeroArea() {
   return (
     <Flex my={10} px={{ base: 4, md: 12 }}>
       <Stack maxW={600}>
-        <Heading mb={6}>
+        <Heading mb={6} size={"3xl"}>
           Want to Live{" "}
           <Text as={"span"} color={"gs-green.500"}>
             Healthier
@@ -15,7 +15,7 @@ export default function HeroArea() {
             Longer?
           </Text>
         </Heading>
-        <Text color={"gs-gray.200"}>
+        <Text color={"gs-gray.100"}>
           We&apos;re building healthy communities focused on longevity all
           around the world, we want to help people live longer, better through
           community inclusive programs that improve productivity, make people
