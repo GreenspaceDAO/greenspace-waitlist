@@ -1,19 +1,30 @@
 import {
   ChakraBaseProvider,
-  extendBaseTheme,
+  extendTheme,
   theme as chakraTheme,
+  StyleFunctionProps,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-const { Button, Link, List, FormLabel, Input } = chakraTheme.components;
 const config = {
   initialColorMode: "dark",
   useSystemColorMode: false,
 };
-export const theme = extendBaseTheme({
+export const theme = extendTheme({
   fonts: {
     heading: "var(--font-poppins)",
     body: "var(--font-poppins)",
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "gs-gray.900",
+        lineHeight: "tall",
+      },
+      a: {
+        color: "gs-yellow.400",
+      },
+    },
   },
   colors: {
     "gs-green": {
@@ -40,6 +51,18 @@ export const theme = extendBaseTheme({
       800: "#472500",
       900: "#1a0a00",
     },
+    "gs-beige": {
+      50: "#f9f9eb",
+      100: "#eeebc8",
+      200: "#e3daa4",
+      300: "#d7c57e",
+      400: "#cdad59",
+      500: "#b48c41",
+      600: "#8c6734",
+      700: "#634525",
+      800: "#3c2716",
+      900: "#140c06",
+    },
     "gs-gray": {
       50: "#e8f6f6",
       100: "#d4dbdd",
@@ -53,16 +76,38 @@ export const theme = extendBaseTheme({
       900: "#001010",
     },
   },
+  layerStyles: {
+    "with-shadow": {
+      boxShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
+    },
+  },
   config,
   components: {
-    List,
-    Input,
-    FormLabel,
-    Link,
     Button: {
-      ...Button,
-      defaultStyle: {
-        borderRadius: "12px",
+      variants: {
+        solid: (styleProps: StyleFunctionProps) => {
+          if (styleProps.colorScheme === "gs-green") {
+            return {
+              bg: "gs-green.700",
+              color: "white",
+              _hover: {
+                bg: "gs-green.800",
+              },
+            };
+          }
+          // if (styleProps.colorScheme === "gs-yellow") {
+          //   return {
+          //     bg: "gs-yellow.600",
+          //     _hover: {
+          //       bg: "gs-yellow.800",
+          //     },
+          //   };
+          // }
+        },
+      },
+      defaultProps: {
+        colorScheme: "gs-green",
+        variant: "solid",
       },
     },
   },
