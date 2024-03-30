@@ -9,10 +9,17 @@ import {
   Text,
   Icon,
   Stack,
+  useToast,
 } from "@chakra-ui/react";
 import { Form, useFormik } from "formik";
 import { HiOutlineMail } from "react-icons/hi";
 export default function WaitListForm() {
+  const toast = useToast({
+    status: "success",
+    duration: 3000,
+    position: "top",
+    title: "Thanks for joining...",
+  });
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -29,11 +36,17 @@ export default function WaitListForm() {
           body: JSON.stringify(values),
         });
         formikHelpers.setSubmitting(false);
+        toast();
         setTimeout(() => {
           formik.resetForm();
         }, 600);
       } catch (error) {
         formikHelpers.setSubmitting(false);
+        toast({
+          title: "Something went wrong...",
+          status: "error",
+          description: "please try again",
+        });
       }
     },
   });
