@@ -47,7 +47,7 @@ export default function CommunityArea() {
         </Text>
         <Button
           textDecor={"none!important"}
-          as={Link}
+          as={"a"}
           href={"#waitlist-form"}
           alignSelf={"flex-start"}
           size={"lg"}

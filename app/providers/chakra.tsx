@@ -20,6 +20,7 @@ export const theme = extendTheme({
       body: {
         bg: "gs-gray.900",
         lineHeight: "tall",
+        scrollBehavior: "smooth",
       },
       a: {
         color: "gs-yellow.400",

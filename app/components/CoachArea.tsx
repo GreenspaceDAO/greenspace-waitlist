@@ -43,7 +43,7 @@ export default function CoachArea() {
         </Text>
         <Button
           textDecor={"none!important"}
-          as={Link}
+          as={'a'}
           colorScheme="gs-yellow"
           href={"#waitlist-form"}
           alignSelf={"flex-start"}

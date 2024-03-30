@@ -47,7 +47,7 @@ export function HeaderNav() {
         >
           <Button
             textDecor={"none!important"}
-            as={Link}
+            as={"a"}
             href={"#waitlist-form"}
             rounded={{ base: "8px", md: "12px" }}
             size={{ base: "md", md: "lg" }}
