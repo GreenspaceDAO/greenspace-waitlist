@@ -23,6 +23,8 @@ export default function CommunityArea() {
     >
       <Box>
         <Image
+          minW={300}
+          flexShrink={0}
           src="/assets/community.jpg"
           alt=""
           maxH={{ base: 350, sm: 450 }}
@@ -31,11 +33,11 @@ export default function CommunityArea() {
           objectFit={"cover"}
         />
       </Box>
-      <Stack maxW={550}>
+      <Stack maxW={{ md: 550, base: "auto" }}>
         <Heading mb={5} size={"2xl"}>
           Community For Everyone
         </Heading>
-        <Text mb={5} maxW={500} lineHeight={"taller"}>
+        <Text mb={5} maxW={{ lg: 500, base: "auto" }} lineHeight={"taller"}>
           We&apos;re building a nurturing space centered on healthy eating and
           longevity—a haven where everyone&apos;s well-being shines. Here, join
           others passionate about nourishing their bodies for vibrant, enduring

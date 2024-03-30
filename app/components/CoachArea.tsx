@@ -21,7 +21,7 @@ export default function CoachArea() {
       px={{ base: 4, md: 12 }}
       justify={"space-between"}
     >
-      <Stack maxW={550}>
+      <Stack maxW={{ md: 550, base: "auto" }}>
         <Heading mb={5} size={"2xl"}>
           One-on-One{" "}
           <Text as={"span"} color={"gs-yellow.400"}>
@@ -32,7 +32,7 @@ export default function CoachArea() {
             </Text>
           </Text>
         </Heading>
-        <Text mb={5} maxW={500} lineHeight={"taller"}>
+        <Text mb={5} maxW={{ lg: 500, base: "auto" }} lineHeight={"taller"}>
           Not comfortable sharing your journey with the community? No problem.
           We&apos;ve got you covered. Connect directly with one of our vetted
           nutritionists for personalized guidance tailored to your needs.
@@ -54,6 +54,8 @@ export default function CoachArea() {
       </Stack>
       <Box>
         <Image
+          minW={300}
+          flexShrink={0}
           src="/assets/coaching.jpg"
           alt=""
           maxH={{ base: 350, sm: 450 }}

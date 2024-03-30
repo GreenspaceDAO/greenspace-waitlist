@@ -17,7 +17,25 @@ export default function WaitListForm() {
     initialValues: {
       email: "",
     },
-    onSubmit: async (values, formikHelpers) => {},
+    onSubmit: async (values, formikHelpers) => {
+      try {
+        formikHelpers.setSubmitting(true);
+
+        await fetch("/api/email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+        formikHelpers.setSubmitting(false);
+        setTimeout(() => {
+          formik.resetForm();
+        }, 600);
+      } catch (error) {
+        formikHelpers.setSubmitting(false);
+      }
+    },
   });
   return (
     <Box id="waitlist-form" mx={"auto"} maxW={"704"} my={16} px={4}>

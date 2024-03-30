@@ -7,8 +7,22 @@ import WaitListForm from "@/components/WaitListForm";
 import HeroArea from "@/components/HeroArea";
 import CommunityArea from "@/components/CommunityArea";
 import CoachArea from "@/components/CoachArea";
+import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowLoader(false);
+      if (timeoutId) clearTimeout(timeoutId);
+    }, 1500);
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -35,7 +49,7 @@ export default function Home() {
         />
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
-      <PageLoader isLoading={false}>
+      <PageLoader isLoading={showLoader}>
         <Box
           maxW={"1350"}
           mx={"auto"}
@@ -46,7 +60,6 @@ export default function Home() {
           pos={"relative"}
         >
           <Box
-            pb={8}
             h={"full"}
             bg={"rgba(41, 41, 41,0.44)"}
             backdropFilter={"blur(30px)"}
@@ -58,6 +71,7 @@ export default function Home() {
             <CommunityArea />
             <CoachArea />
           </Box>
+          <Footer />
         </Box>
       </PageLoader>
     </>

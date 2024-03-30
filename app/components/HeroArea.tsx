@@ -13,7 +13,7 @@ export default function HeroArea() {
       gap={5}
       pb={8}
     >
-      <Stack maxW={600}>
+      <Stack maxW={{ md: 600, base: "auto" }}>
         <Heading mb={6} size={"3xl"}>
           Want to Live{" "}
           <Text as={"span"} color={"gs-green.500"}>
@@ -25,7 +25,7 @@ export default function HeroArea() {
             Longer?
           </Text>
         </Heading>
-        <Text lineHeight={"taller"} maxW={500}>
+        <Text lineHeight={"taller"} maxW={{ md: 550, base: "auto" }}>
           We&apos;re building healthy communities focused on longevity all
           around the world, we want to help people live longer, better through
           community inclusive programs that improve productivity, make people
