@@ -64,6 +64,7 @@ export default function WaitListForm() {
                 color="gs-gray.500"
               />
               <Input
+                onChange={formik.handleChange}
                 pl={2}
                 transition={"0.35s ease-in-out"}
                 rounded={"none"}
@@ -72,6 +73,8 @@ export default function WaitListForm() {
                   boxShadow: "none",
                   borderBottomColor: "gs-yellow.400",
                 }}
+                name="email"
+                value={formik.values.email}
                 border={"0"}
                 type="email"
                 _placeholder={{ color: "gs-gray.500" }}
@@ -79,6 +82,7 @@ export default function WaitListForm() {
               />
             </HStack>
             <Button
+              type="submit"
               isLoading={formik.isSubmitting}
               flexShrink={0}
               rounded={"10px"}

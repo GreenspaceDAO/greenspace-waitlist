@@ -16,7 +16,11 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 
     <p>
       Thank you for joining the waitlist! We&apos;re thrilled to have you on
-      board and appreciate your interest in <em>GreenspaceDAO</em>.
+      board and appreciate your interest in
+      <em>
+        <strong> GreenspaceDAO </strong>
+      </em>
+      .
     </p>
 
     <p>
@@ -41,10 +45,10 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       Best regards,
       <br />
       Victory Lucky
-      <b />
+      <br />
       Co-Founder
       <br />
-      GreenspaceDAO
+      <strong>GreenspaceDAO</strong>
     </p>
   </div>
 );
