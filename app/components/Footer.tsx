@@ -43,5 +43,5 @@ export default function Footer() {
         </Stack>
       </Flex>
     </Box>
-  );
+  )
 }
