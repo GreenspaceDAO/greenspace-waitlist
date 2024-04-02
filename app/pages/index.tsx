@@ -85,5 +85,5 @@ We're building healthy communities focused on longevity all around the world, we
         </Box>
       </PageLoader>
     </>
-  )
+  );
 }
